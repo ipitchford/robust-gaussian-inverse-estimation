@@ -1,8 +1,10 @@
 {
   "title":"Quantitative robust estimation for Gaussian inverse problems",
   "creator":"Anonymous",
-  "version":"1.0.0-candidate",
-  "status":"local candidate; archive and publication binding pending",
+  "version":"1.0.0",
+  "status":"unrefereed candidate research release",
+  "doi":"10.5281/zenodo.23447009",
+  "repository":"https://github.com/ipitchford/robust-gaussian-inverse-estimation",
   "claims":[
     {"id":"uniform-regret","statement":"The proposed spectral rule has normalized additive regret at most min{1,(128/(27d))^(1/4)+sqrt(2/d)} among linear estimators, uniformly over the stated Gaussian inverse problems.","evidence":["paper.tex: Theorem 1 and supporting lemmas","code/inverse_risk_checks.py: finite instances"],"type":"analytic proof with numerical stress checks","exclusions":["not a risk-ratio theorem","not estimator-matrix convergence","not nonlinear optimality"]},
     {"id":"anisotropic-jitter","statement":"When the minimizing dual parameter is positive, an explicit anisotropic training-noise covariance implements the spectral rule through population least squares.","evidence":["paper.tex: implementation theorem"],"type":"analytic proof","exclusions":["population statement, not empirical validation"]},

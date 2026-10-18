@@ -1,6 +1,6 @@
 # Quantitative robust estimation for Gaussian inverse problems
 
-Anonymous · 1.0.0-candidate · 18 October 2026
+Anonymous · 1.0.0 · 18 October 2026 · DOI: [10.5281/zenodo.23447009](https://doi.org/10.5281/zenodo.23447009)
 
 This manuscript proves the proposed spectral estimator's asymptotic optimality among linear estimators for Gaussian inverse problems under samplewise norm-bounded attacks. It gives a uniform finite-dimensional additive risk-regret bound, an exact anisotropic-jitter implementation through population linear least squares when the minimizing dual parameter is positive, the isotropic boundary under positive-noise active-estimation hypotheses, and a certified two-band separation.
 
@@ -16,6 +16,6 @@ The conclusion concerns normalized additive risk, not risk ratios or convergence
 - `figures/inverse_jitter_illustration.png`: explanatory figure.
 - `AI_INDEX.md`, `ASSURANCE.md`, `STATUS.md`: reading and assurance boundaries.
 
-Run `python code/replay.py --output replay-output.json` from the repository root. Original prose, data and figures are CC0-1.0; original code is MIT licensed.
+Run `python code/replay.py --output replay-output.json` from the repository root. Original prose, data and figures are CC0-1.0; original code is MIT licensed. The canonical source repository is <https://github.com/ipitchford/robust-gaussian-inverse-estimation>.
 
 This is an unrefereed AI-assisted research candidate. Finite replay is not proof-assistant formalisation, independent reproduction or human peer review.

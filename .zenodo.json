@@ -5,8 +5,9 @@
   "description":"Uniform additive robust-risk guarantee for a proposed spectral linear estimator, with exact anisotropic-jitter implementation through population linear least squares when the minimizing dual parameter is positive, an isotropic boundary under positive-noise active-estimation hypotheses, and a certified two-band gap. No finite-sample training, risk-ratio, nonlinear-optimality, human-peer-review or formal-verification claim is made.",
   "publication_date":"2026-10-18",
   "creators":[{"name":"Anonymous"}],
-  "version":"1.0.0-candidate",
+  "version":"1.0.0",
   "license":"cc-zero",
   "access_right":"open",
-  "keywords":["inverse problems","robust estimation","Gaussian models","spectral estimators"]
+  "keywords":["inverse problems","robust estimation","Gaussian models","spectral estimators"],
+  "related_identifiers":[{"identifier":"https://github.com/ipitchford/robust-gaussian-inverse-estimation","relation":"isSupplementTo","scheme":"url"}]
 }
