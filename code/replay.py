@@ -25,7 +25,7 @@ def main():
         if payload.get("status") != "PASS":
             raise SystemExit(f"{script.name}: non-PASS status")
         runs.append({"script":script.relative_to(ROOT).as_posix(),"sha256":sha256(script.read_bytes()).hexdigest(),"result":payload})
-    receipt = {"status":"PASS","python":sys.version,"optimized":not __debug__,"elapsed_seconds":time.time()-started,"runs":runs}
+    receipt = {"status":"PASS","python":sys.version,"wrapper_optimized":not __debug__,"verifier_subprocess_optimized":False,"elapsed_seconds":time.time()-started,"runs":runs}
     output.write_text(json.dumps(receipt, indent=2)+"\n")
     print(json.dumps({"status":"PASS","output":str(output),"runs":len(runs)}, indent=2))
 

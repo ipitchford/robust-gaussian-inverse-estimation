@@ -1,8 +1,9 @@
 {
   "status": "PASS",
   "python": "3.12.11 (main, Jun  3 2025, 15:41:47) [Clang 17.0.0 (clang-1700.0.13.3)]",
-  "optimized": true,
-  "elapsed_seconds": 0.6441481113433838,
+  "wrapper_optimized": true,
+  "verifier_subprocess_optimized": false,
+  "elapsed_seconds": 0.6088531017303467,
   "runs": [
     {
       "script": "code/inverse_risk_checks.py",

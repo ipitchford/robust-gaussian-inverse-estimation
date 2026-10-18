@@ -1265,9 +1265,9 @@ training guarantees.
 Claim & Analytic support & Executable support & Not established by the check \\
 \midrule
 Uniform additive regret bound & Theorem 1, Lemma 2, (23)--(26) & \path{inverse_risk_checks.py} finite cases & the uniform theorem itself \\
-Arbitrary-covariance dual gap & Proposition 3 & independent noncommuting-covariance spot check & optimality of the constant \\
-Anisotropic implementation & Corollary 4 and (29) & gain-identity checks & finite-sample or nonlinear training guarantees \\
-Isotropic boundary and persistent gap & Proposition 5 and Theorem 6 & band checks and exact certificate & equality outside the stated hypotheses \\
+Arbitrary-covariance dual gap & Proposition 3 & analytic proof; no packaged executable check & optimality of the constant \\
+Anisotropic implementation & Corollary 4 and (29) & related scalar-root and spectral-gain checks only & the covariance identity or finite-sample guarantees \\
+Isotropic boundary and persistent gap & Proposition 5 and Theorem 6 & one-positive-band finite checks plus exact two-band certificate & the analytic general theorem or equality outside its hypotheses \\
 Explicit two-band separation & Proposition 7 and Corollary 8 & \path{analytic_isotropic_gap.py} exact arithmetic & optimality of the example or dimension threshold \\
 \bottomrule
 \end{tabular}

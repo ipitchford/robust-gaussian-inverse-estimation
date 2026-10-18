@@ -872,7 +872,7 @@ $$
 Hence $\eta_{20000}<0.13409$ and
 $0.141382-0.13409=0.007292$. Since $\eta_d$ decreases with $d$, the same lower bound holds for every larger allowed dimension. $\square$
 
-![Numerical illustration of the two-band problem: the surrogate curves, exact isotropic lower bound and numerically minimising gains. The rational certificate proves the separation independently of these plots.](../figures/inverse_jitter_illustration.png)
+![Numerical illustration of the two-band problem: the surrogate curves, exact isotropic lower bound and numerically minimising gains. The rational certificate proves the separation independently of these plots.](figures/inverse_jitter_illustration.png)
 
 # Endpoint checks, reproducibility and limitations
 
@@ -906,9 +906,9 @@ The recorded prior-art search was last checked on 17 October 2026. It located th
 | Claim | Analytic support | Executable support | What the executable check does not establish |
 |---|---|---|---|
 | Uniform energy-normalised additive regret bound | Theorem 1, Lemma 2 and equations (23)--(26) | `inverse_risk_checks.py` checks finite scalar-dual and finite-dimensional cases | The uniform theorem, which is the displayed analytic proof |
-| Arbitrary-covariance dual-gap bound | Proposition 3 | independent noncommuting-covariance spot check | Optimality of the stated constant |
-| Exact anisotropic population implementation | Corollary 4 and equation (29) | gain-identity checks in `inverse_risk_checks.py` | Finite-sample or nonlinear-network training guarantees |
-| Isotropic implementation boundary and persistent gap | Proposition 5 and Theorem 6 | numerical band checks plus exact certificate | Equality outside the stated positive-noise, active-estimation hypotheses |
+| Arbitrary-covariance dual-gap bound | Proposition 3 | analytic proof; no packaged executable check | Optimality of the stated constant |
+| Exact anisotropic population implementation | Corollary 4 and equation (29) | no direct implementation check; `inverse_risk_checks.py` checks related scalar-root and spectral-gain identities | The covariance identity, or finite-sample or nonlinear-network training guarantees |
+| Isotropic implementation boundary and persistent gap | Proposition 5 and Theorem 6 | one-positive-band finite checks plus the exact two-band certificate | The analytic general theorem or equality outside the stated positive-noise, active-estimation hypotheses |
 | Explicit two-band and finite-dimensional separation | Proposition 7 and Corollary 8 | `analytic_isotropic_gap.py`, using rational and integer arithmetic | Optimality of the example or of the dimension threshold |
 
 # References {.unnumbered}
