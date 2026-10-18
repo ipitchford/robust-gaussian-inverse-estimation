@@ -1,0 +1,13 @@
+{
+  "schemaVersion":"1.0",
+  "recordScope":"Retrospective publication-intake record, not prospective registration or exhaustive novelty proof.",
+  "contributionMap":[
+    {"claim":"Uniform quantitative proof of the proposed spectral estimator's asymptotic optimality among linear estimators","paperLocation":"Theorem 1","closestPriorWork":"Krainovic–Soltanolkotabi–Heckel conjecture and formula","verdict":"new-in-bounded-search"},
+    {"claim":"Exact anisotropic implementation and isotropic boundary","paperLocation":"jitter sections","closestPriorWork":"data-augmentation and robust-regression literature cited in manuscript","verdict":"new-in-bounded-search"},
+    {"claim":"Exact two-band persistent-gap certificate","paperLocation":"Theorem 6","closestPriorWork":"qualitative spectral comparison in source paper","verdict":"new-in-bounded-search"}
+  ],
+  "limitationTriage":[
+    {"limitation":"Uniform rate may not be sharp","cheap":false,"decision":"OPEN","reasonOpen":"requires a new uniform empirical-process argument or matching lower bound"},
+    {"limitation":"No nonlinear-estimator theorem","cheap":false,"decision":"OPEN","reasonOpen":"changes the optimization class and proof architecture"}
+  ]
+}

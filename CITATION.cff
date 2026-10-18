@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Please cite this candidate manuscript."
+date-released: 2026-10-18
+type: article
+title: "Quantitative robust estimation for Gaussian inverse problems"
+authors:
+  - name: Anonymous
+version: 1.0.0-candidate
+license: CC0-1.0
+abstract: >-
+  A uniform finite-dimensional additive regret theorem for a spectral robust
+  linear estimator, with exact anisotropic and isotropic jitter boundaries.
+keywords:
+  - inverse problems
+  - robust estimation
+  - Gaussian models
+  - spectral estimators

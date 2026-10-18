@@ -1,0 +1,13 @@
+name: verify
+on: [push, pull_request]
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+      - run: python code/replay.py --output /tmp/replay.json
+      - run: python -O code/replay.py --output /tmp/replay-optimized.json

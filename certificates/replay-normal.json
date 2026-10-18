@@ -1,0 +1,163 @@
+{
+  "status": "PASS",
+  "python": "3.12.11 (main, Jun  3 2025, 15:41:47) [Clang 17.0.0 (clang-1700.0.13.3)]",
+  "optimized": false,
+  "elapsed_seconds": 1.250493049621582,
+  "runs": [
+    {
+      "script": "code/inverse_risk_checks.py",
+      "sha256": "03cba3ed2f789b88342d289c9e3f8ad4f86b7fc169db46aeedeb9c58ea4226b8",
+      "result": {
+        "status": "PASS",
+        "method": "exact Gaussian norm expectation evaluated numerically; independent bounded scalar optimisation",
+        "checks_passed": 3749,
+        "scalar_dual_cases": 112,
+        "finite_dimension_cases": 592,
+        "dimensions": [
+          1,
+          2,
+          5,
+          20,
+          100,
+          1000,
+          20000
+        ],
+        "covered_endpoints": [
+          "zero rank",
+          "rank deficient including m<d model",
+          "zero noise",
+          "zero adversary",
+          "zero dual parameter",
+          "hard-case dual boundary",
+          "active and inactive estimators"
+        ],
+        "maximum_scalar_value_absolute_error": 7.560457957467293e-09,
+        "maximum_surrogate_optimum_absolute_error": 2.220446049250313e-16,
+        "maximum_observed_additive_regret": 0.10105771959856757,
+        "dimension_20000_examples": [
+          {
+            "relative_epsilon": 0.0,
+            "surrogate_gain": 0.9990009990009991,
+            "risk_optimal_gain": 0.9990009990009991,
+            "surrogate_value": 0.000999000999000999,
+            "risk_at_surrogate_gain": 0.0009990009990009992,
+            "optimal_scalar_risk": 0.0009990009990009992,
+            "additive_regret": 0.0,
+            "theorem_bound": 0.13408064788027996
+          },
+          {
+            "relative_epsilon": 0.2,
+            "surrogate_gain": 0.9925558312655087,
+            "risk_optimal_gain": 0.9925557705606184,
+            "surrogate_value": 0.053254437869822494,
+            "risk_at_surrogate_gain": 0.05325427778107206,
+            "optimal_scalar_risk": 0.05325427778104693,
+            "additive_regret": 2.5125734826048074e-14,
+            "theorem_bound": 0.13408064788027996
+          },
+          {
+            "relative_epsilon": 0.9,
+            "surrogate_gain": 0.9339443411824996,
+            "risk_optimal_gain": 0.9339407550381371,
+            "surrogate_value": 0.8333998618064787,
+            "risk_at_surrogate_gain": 0.8333983413136066,
+            "optimal_scalar_risk": 0.833398341282612,
+            "additive_regret": 3.0994540267670345e-11,
+            "theorem_bound": 0.13408064788027996
+          },
+          {
+            "relative_epsilon": 1.0,
+            "surrogate_gain": 0.0,
+            "risk_optimal_gain": 0.011981526351445842,
+            "surrogate_value": 1.0,
+            "risk_at_surrogate_gain": 1.0,
+            "optimal_scalar_risk": 0.9999998493502709,
+            "additive_regret": 1.50649729135921e-07,
+            "theorem_bound": 0.13408064788027996
+          },
+          {
+            "relative_epsilon": 1.2,
+            "surrogate_gain": 0.0,
+            "risk_optimal_gain": 0.0,
+            "surrogate_value": 1.0,
+            "risk_at_surrogate_gain": 1.0,
+            "optimal_scalar_risk": 1.0,
+            "additive_regret": 0.0,
+            "theorem_bound": 0.13408064788027996
+          }
+        ],
+        "scope": "Numerical sanity checks of finite instances, not a substitute for the general proof.  The zero-adversary endpoint uses its nominal limiting solution; no finite lambda minimiser is asserted there."
+      }
+    },
+    {
+      "script": "code/analytic_isotropic_gap.py",
+      "sha256": "687a0d4e0c49e6f460fdada3beebdffb45d3c18acb2fa2adf3d71cb78bc79be6",
+      "result": {
+        "status": "PASS",
+        "method": "standard-library exact rational and polynomial arithmetic",
+        "checks_passed": 29,
+        "checks": [
+          "band weights sum to one",
+          "fixed attack has squared norm epsilon squared",
+          "scaled square roots of band weights",
+          "band 1: residual variance numerator",
+          "band 1: dropping noise gives a lower bound",
+          "band 1: fixed attack numerator",
+          "band 2: residual variance numerator",
+          "band 2: dropping noise gives a lower bound",
+          "band 2: fixed attack numerator",
+          "band 1: change of variable",
+          "band 2: change of variable",
+          "L-5303/10000 has the claimed numerator",
+          "centred polynomial identity",
+          "quadratic factor positive and increasing on nonnegative inputs",
+          "quadratic factor at nine",
+          "positive constant for the interval zero to nine",
+          "claimed discriminant",
+          "quadratic lower bound is strictly positive",
+          "upper witness band 1: strict dual domain",
+          "upper witness band 2: strict dual domain",
+          "exact upper certificate margin",
+          "surrogate witness strictly below 0.388918",
+          "strict limiting gap threshold",
+          "exact fourth-power margin",
+          "strict fourth-root upper bound",
+          "exact square-root term",
+          "finite-dimensional error threshold",
+          "strict finite-dimensional gap threshold",
+          "integral band multiplicities"
+        ],
+        "normalisation": {
+          "signal_energy": "1",
+          "singular_values": [
+            "2/5",
+            "1"
+          ],
+          "band_weights": [
+            "1/5",
+            "4/5"
+          ],
+          "noise_ratio": "1/1000",
+          "epsilon_squared": "1/5"
+        },
+        "polynomial_coefficients_increasing_degree": [
+          34170000,
+          1162600,
+          -1004423,
+          8426,
+          4697
+        ],
+        "discriminant": -37680715136,
+        "isotropic_surrogate_lower_bound": "0.5303",
+        "unrestricted_surrogate_strict_upper_bound": "0.388918",
+        "exact_upper_margin": "3168557554921612509053869041613787853379731/25868592782876951709628705995150319490966201600000",
+        "limiting_additive_gap": "> 0.141382",
+        "dimension": 20000,
+        "exact_fourth_power_margin": "192972343173947/2700000000000000000000",
+        "eta_strict_upper_bound": "0.13409",
+        "finite_dimensional_additive_gap": "> 0.007292",
+        "finite_dimensional_application": "Uses the manuscript's proved bound I_d-T_d >= Delta-eta_d at an isotropic minimiser with R<=1, Q+epsilon^2 B^2<=1 and q_i<=1/d."
+      }
+    }
+  ]
+}

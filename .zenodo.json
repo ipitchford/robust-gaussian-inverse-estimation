@@ -1,0 +1,12 @@
+{
+  "title":"Quantitative robust estimation for Gaussian inverse problems",
+  "upload_type":"publication",
+  "publication_type":"preprint",
+  "description":"Uniform additive robust-risk guarantee for a proposed spectral linear estimator, with exact anisotropic-jitter implementation, isotropic boundary and a certified two-band gap. No risk-ratio, nonlinear-optimality, human-peer-review or formal-verification claim is made.",
+  "publication_date":"2026-10-18",
+  "creators":[{"name":"Anonymous"}],
+  "version":"1.0.0-candidate",
+  "license":"cc-zero",
+  "access_right":"open",
+  "keywords":["inverse problems","robust estimation","Gaussian models","spectral estimators"]
+}
