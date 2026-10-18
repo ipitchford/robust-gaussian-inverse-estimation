@@ -2,14 +2,19 @@
   "status": "PASS",
   "python": "3.12.11 (main, Jun  3 2025, 15:41:47) [Clang 17.0.0 (clang-1700.0.13.3)]",
   "wrapper_optimized": false,
+  "verifier_subprocess_optimization_levels": [
+    0,
+    0
+  ],
   "verifier_subprocess_optimized": false,
-  "elapsed_seconds": 1.2704839706420898,
+  "elapsed_seconds": 0.838951826095581,
   "runs": [
     {
       "script": "code/inverse_risk_checks.py",
-      "sha256": "03cba3ed2f789b88342d289c9e3f8ad4f86b7fc169db46aeedeb9c58ea4226b8",
+      "sha256": "fc273233a0e1af6a8310ba10733230413c6f2c0898f5d204d67f402c68c7c4bc",
       "result": {
         "status": "PASS",
+        "python_optimization_level": 0,
         "method": "exact Gaussian norm expectation evaluated numerically; independent bounded scalar optimisation",
         "checks_passed": 3749,
         "scalar_dual_cases": 112,
@@ -92,9 +97,10 @@
     },
     {
       "script": "code/analytic_isotropic_gap.py",
-      "sha256": "687a0d4e0c49e6f460fdada3beebdffb45d3c18acb2fa2adf3d71cb78bc79be6",
+      "sha256": "68e7b2c6108f1e8592382d31c13f51e02296fc8560240ea1a97d6de05c869040",
       "result": {
         "status": "PASS",
+        "python_optimization_level": 0,
         "method": "standard-library exact rational and polynomial arithmetic",
         "checks_passed": 29,
         "checks": [

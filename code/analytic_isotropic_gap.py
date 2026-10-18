@@ -9,6 +9,7 @@ the accompanying manuscript; this script checks its exact numerical inputs.
 
 from fractions import Fraction as F
 import json
+import sys
 
 
 def add(a, b):
@@ -117,6 +118,7 @@ def certificate():
 
     return {
         "status": "PASS",
+        "python_optimization_level": sys.flags.optimize,
         "method": "standard-library exact rational and polynomial arithmetic",
         "checks_passed": len(checks),
         "checks": checks,

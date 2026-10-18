@@ -8,6 +8,7 @@ and endpoints; the manuscript's proof supplies the general theorem.
 
 import json
 import math
+import sys
 from functools import lru_cache
 from scipy.optimize import minimize_scalar
 
@@ -137,6 +138,7 @@ def run_checks():
 
     return {
         "status": "PASS",
+        "python_optimization_level": sys.flags.optimize,
         "method": "exact Gaussian norm expectation evaluated numerically; independent bounded scalar optimisation",
         "checks_passed": passed,
         "scalar_dual_cases": scalar_cases,

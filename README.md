@@ -2,7 +2,7 @@
 
 Anonymous · 1.0.0-candidate · 18 October 2026
 
-This manuscript proves the proposed spectral estimator's asymptotic optimality among linear estimators for Gaussian inverse problems under samplewise norm-bounded attacks. It gives a uniform finite-dimensional additive risk-regret bound, an exact anisotropic-jitter implementation, a sharp isotropic-jitter boundary, and a certified two-band separation.
+This manuscript proves the proposed spectral estimator's asymptotic optimality among linear estimators for Gaussian inverse problems under samplewise norm-bounded attacks. It gives a uniform finite-dimensional additive risk-regret bound, an exact anisotropic-jitter implementation through population linear least squares when the minimizing dual parameter is positive, the isotropic boundary under positive-noise active-estimation hypotheses, and a certified two-band separation.
 
 The conclusion concerns normalized additive risk, not risk ratios or convergence of estimator matrices.
 

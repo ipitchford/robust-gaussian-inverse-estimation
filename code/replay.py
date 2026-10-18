@@ -3,7 +3,7 @@
 from argparse import ArgumentParser
 from hashlib import sha256
 from pathlib import Path
-import json, subprocess, sys, time
+import json, os, subprocess, sys, time
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = [ROOT / "code/inverse_risk_checks.py", ROOT / "code/analytic_isotropic_gap.py"]
@@ -17,15 +17,24 @@ def main():
         raise SystemExit(f"refusing to overwrite {output}")
     started = time.time()
     runs = []
+    child_env = os.environ.copy()
+    child_env.pop("PYTHONOPTIMIZE", None)
     for script in SCRIPTS:
-        proc = subprocess.run([sys.executable, str(script)], cwd=ROOT, text=True, capture_output=True)
+        proc = subprocess.run([sys.executable, str(script)], cwd=ROOT, env=child_env,
+                              text=True, capture_output=True)
         if proc.returncode:
             raise SystemExit(proc.stderr or proc.stdout)
         payload = json.loads(proc.stdout)
         if payload.get("status") != "PASS":
             raise SystemExit(f"{script.name}: non-PASS status")
+        if payload.get("python_optimization_level") != 0:
+            raise SystemExit(f"{script.name}: assertions disabled by optimization")
         runs.append({"script":script.relative_to(ROOT).as_posix(),"sha256":sha256(script.read_bytes()).hexdigest(),"result":payload})
-    receipt = {"status":"PASS","python":sys.version,"wrapper_optimized":not __debug__,"verifier_subprocess_optimized":False,"elapsed_seconds":time.time()-started,"runs":runs}
+    levels = [run["result"]["python_optimization_level"] for run in runs]
+    receipt = {"status":"PASS","python":sys.version,"wrapper_optimized":not __debug__,
+               "verifier_subprocess_optimization_levels":levels,
+               "verifier_subprocess_optimized":any(level > 0 for level in levels),
+               "elapsed_seconds":time.time()-started,"runs":runs}
     output.write_text(json.dumps(receipt, indent=2)+"\n")
     print(json.dumps({"status":"PASS","output":str(output),"runs":len(runs)}, indent=2))
 
