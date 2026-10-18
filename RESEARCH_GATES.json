@@ -1,13 +1,88 @@
 {
-  "schemaVersion":"1.0",
-  "recordScope":"Retrospective publication-intake record, not prospective registration or exhaustive novelty proof.",
-  "contributionMap":[
-    {"claim":"Uniform quantitative proof of the proposed spectral estimator's asymptotic optimality among linear estimators","paperLocation":"Theorem 1","closestPriorWork":"Krainovic–Soltanolkotabi–Heckel conjecture and formula","verdict":"new-in-bounded-search"},
-    {"claim":"Exact anisotropic implementation and isotropic boundary","paperLocation":"jitter sections","closestPriorWork":"data-augmentation and robust-regression literature cited in manuscript","verdict":"new-in-bounded-search"},
-    {"claim":"Exact two-band persistent-gap certificate","paperLocation":"Theorem 6","closestPriorWork":"qualitative spectral comparison in source paper","verdict":"new-in-bounded-search"}
+  "schemaVersion": "1.0",
+  "recordScope": "Retrospective publication-intake record, not prospective registration or exhaustive novelty proof.",
+  "contributionMap": [
+    {
+      "claim": "The proposed spectral estimator has a dimension-uniform normalized additive regret bound among linear estimators for the stated Gaussian inverse problems.",
+      "unit": "statement",
+      "paperLocation": "Theorem 1 and Lemma 2",
+      "searches": [
+        {"date": "2026-10-17", "query": "spectral estimator robust Gaussian inverse problem additive regret conjecture", "corpus": "NeurIPS proceedings, arXiv, Crossref, web"},
+        {"date": "2026-10-18", "query": "Krainovic Soltanolkotabi Heckel conjecture spectral estimator proof", "corpus": "NeurIPS proceedings, arXiv, web"}
+      ],
+      "closestPriorWork": "Krainovic, Soltanolkotabi and Heckel propose the spectral estimator and qualitative asymptotic conjecture.",
+      "verdict": "new-in-bounded-search"
+    },
+    {
+      "claim": "An explicit anisotropic covariance implements the spectral rule through population linear least squares when the minimizing dual parameter is positive, while isotropic implementation has the stated positive-noise active-estimation boundary.",
+      "unit": "statement",
+      "paperLocation": "Corollary 4; Proposition 5; Theorem 6",
+      "searches": [
+        {"date": "2026-10-18", "query": "anisotropic jitter covariance population least squares spectral shrinkage inverse problems", "corpus": "arXiv, Crossref, web"},
+        {"date": "2026-10-18", "query": "isotropic noise injection exact spectral estimator flat singular spectrum", "corpus": "arXiv, Crossref, web"}
+      ],
+      "closestPriorWork": "Noise-injection and robust inverse-estimation papers study adjacent mechanisms but no identical population covariance identity and boundary were found.",
+      "verdict": "new-in-bounded-search"
+    },
+    {
+      "claim": "A rational two-band certificate yields a strict limiting and finite-dimensional gap between unrestricted spectral shrinkage and isotropic jitter.",
+      "unit": "object",
+      "paperLocation": "Proposition 7; Corollary 8; code/analytic_isotropic_gap.py",
+      "searches": [{"date": "2026-10-18", "query": "two band singular spectrum isotropic jitter gap robust inverse estimation", "corpus": "arXiv, Crossref, web"}],
+      "closestPriorWork": "The originating qualitative conjecture and numerical experiments do not give this exact separating instance.",
+      "verdict": "new-in-bounded-search"
+    },
+    {
+      "claim": "Sign averaging, gain clipping, scalar duality, and an integrated Gaussian-process derivative bound convert pointwise surrogate control into uniform additive regret.",
+      "unit": "method",
+      "paperLocation": "Sections 2--4; Proposition 3",
+      "searches": [{"date": "2026-10-18", "query": "Gaussian quadratic process expectation infimum interchange gain clipping trust region dual robust linear estimation", "corpus": "arXiv, textbooks, Crossref"}],
+      "closestPriorWork": "Trust-region duality, Gaussian concentration, and spectral calculus are established methods and are cited; their combination here is used for the new theorem rather than claimed as a standalone invention.",
+      "verdict": "known-cited"
+    }
   ],
-  "limitationTriage":[
-    {"limitation":"Uniform rate may not be sharp","cheap":false,"decision":"OPEN","reasonOpen":"requires a new uniform empirical-process argument or matching lower bound"},
-    {"limitation":"No nonlinear-estimator theorem","cheap":false,"decision":"OPEN","reasonOpen":"changes the optimization class and proof architecture"}
-  ]
+  "sourcesReadInFull": [
+    {
+      "citation": "Krainovic, Soltanolkotabi and Heckel, Learning provably robust estimators for inverse problems via jittering",
+      "usedFor": "spectral estimator formula, scalar dual representation, and qualitative conjecture",
+      "readWhat": "full NeurIPS paper with emphasis on the robust-risk model and Section 3.3",
+      "date": "2026-10-18",
+      "evidenceLocator": "https://proceedings.neurips.cc/paper_files/paper/2023/file/b3411e30afa6caeefa4d6d39a5ea84cd-Paper-Conference.pdf"
+    },
+    {
+      "citation": "Guan and Davenport, Robust model-based image reconstruction via iterative noise injection",
+      "usedFor": "adjacent noise-injection context and the boundary from nonlinear finite-training claims",
+      "readWhat": "problem formulation, method, and average-case robustness statements",
+      "date": "2026-10-18",
+      "evidenceLocator": "https://arxiv.org/abs/2410.14667"
+    }
+  ],
+  "limitationTriage": [
+    {
+      "limitation": "The proved additive regret rate is d^(-1/4), and optimality of that rate is not established.",
+      "closingQuestion": "Can a sharper empirical-process argument improve the uniform rate without imposing additional spectral assumptions?",
+      "triedOrSearched": "Checked the clipping and integrated-process proof for a routine tightening; the fourth-root term arises from balancing the singular boundary and stochastic fluctuation.",
+      "estimatedCost": "new research campaign; likely days to weeks",
+      "cheap": false,
+      "decision": "OPEN",
+      "reasonOpen": "A better rate requires a new uniform process estimate, not algebraic cleanup.",
+      "whyNotClosedNow": "No sharper general inequality was found in the bounded extension assessment."
+    },
+    {
+      "limitation": "The implementation result is population-linear and does not establish finite-sample or nonlinear-network training guarantees.",
+      "closingQuestion": "Under what sample-size and model-misspecification conditions does empirical jitter training inherit the population covariance identity?",
+      "triedOrSearched": "Compared the exact covariance identity with adjacent iterative noise-injection work; finite-sample learning requires concentration and optimization analysis absent from the current model.",
+      "estimatedCost": "substantial new theoretical and empirical project",
+      "cheap": false,
+      "decision": "OPEN",
+      "reasonOpen": "It changes the inferential target and evidence class.",
+      "whyNotClosedNow": "The current theorem is complete at the population linear level and makes no training claim."
+    }
+  ],
+  "extensionScout": {
+    "by": "publication-preparation agent",
+    "date": "2026-10-18",
+    "proposals": ["Improve the uniform regret rate.", "Develop finite-sample anisotropic-jitter guarantees.", "Extend the theorem to nonlinear estimators or estimated forward operators."],
+    "actions": ["Classified all three as substantial new projects rather than routine revisions.", "Added the arbitrary-covariance analytic extension and exact two-band finite-dimensional certificate where tractable.", "Made population, positivity, additive-risk, and linear-estimator boundaries explicit in public metadata."]
+  }
 }
